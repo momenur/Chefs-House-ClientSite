@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext)
+    const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext)
 
     const handelLogIn = event => {
         event.preventDefault();
@@ -22,13 +22,39 @@ const Login = () => {
             console.log(error);
         })
     }
+
+    //  Google Sign in
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            const logedUser = result.user;
+            console.log(logedUser)
+        })
+        .then(error => {
+            console.log(error)
+        })
+    }
+
+    //  Github Sign In
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+        .then(result => {
+            const logedUser = result.user;
+            console.log(logedUser);
+        })
+        .then(error => {
+            console.log(error)
+        })
+    }
     
     return (
         <div>
-            <div className="min-h-screen hero bg-base-200">
+            <div className=" hero bg-neutral-500">
                 <div className="flex-col hero-content">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold text-neutral-content">Login now!</h1>
                     </div>
                     <form onSubmit={handelLogIn} className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
                         <div className="card-body">
@@ -46,7 +72,9 @@ const Login = () => {
                                 
                             </div>
                             <div className="mt-6 form-control">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="mb-4 btn btn-primary">Login</button>
+                                <button onClick={handleGoogleSignIn} className="mb-4 btn btn-outline btn-primary">Sign IN With Google</button>
+                                <button onClick={handleGithubSignIn} className="btn btn-outline btn-primary">Sign In With Github</button>
                                 <Link className='mt-4 font-semibold text-blue-800 underline' to='/register'>Register Now</Link>
                             </div>
                         </div>

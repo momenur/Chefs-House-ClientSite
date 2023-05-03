@@ -7,27 +7,32 @@ const Navbar = () => {
 
     const handelLogOut = () => {
         logOut()
-        .then(result = () => {})
-        .catch(error =>{
-            console.log(error);
-        })
+            .then(result = () => { })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div>
-            <div className="navbar bg-base-300">
-                <a className="text-4xl font-extrabold text-blue-800 ">Chefs House</a>
-                <Link className="text-xl normal-case btn btn-ghost" to='/'>Home</Link>
-                <Link className="text-xl normal-case btn btn-ghost" to='/blog'>Blog</Link>
+            <div className="navbar bg-neutral">
+                <div>
+                    <a className="text-4xl font-extrabold text-neutral-content ">Chefs House</a>
+                    <div>
+                        <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/'>Home</Link>
+                        <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/blog'>Blog</Link>
+                    </div>
 
-                {
-                    user ? <>
-                        <Link onClick={handelLogOut} className="text-xl normal-case btn btn-ghost" to='/login'>Log Out</Link>
-                    </> : <>
-                        <Link className="text-xl normal-case btn btn-ghost" to='/login'>Login</Link>
-                    </>
-                }
-
-                <Link className="text-xl normal-case btn btn-ghost" to='/register'>Register</Link>
+                    <div>
+                        {
+                            user ? <>
+                                <Link onClick={handelLogOut} className="text-xl normal-case btn btn-ghost text-neutral-content" to='/login'>Log Out</Link>
+                            </> : <>
+                                <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/login'>Login</Link>
+                                <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/register'>Register</Link>
+                            </>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     );

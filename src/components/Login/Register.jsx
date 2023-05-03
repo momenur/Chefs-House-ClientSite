@@ -27,10 +27,10 @@ const Register = () => {
     }
     return (
         <div>
-            <div className="min-h-screen hero bg-base-200">
+            <div className=" hero bg-neutral-500">
                 <div className="flex-col hero-content">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold text-blue-600">Register Now!</h1>
+                        <h1 className="text-5xl font-bold text-neutral-content">Register Now!</h1>
                     </div>
                     <form onSubmit={handelRegister} className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
                         <div className="card-body">
