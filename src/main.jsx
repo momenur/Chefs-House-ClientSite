@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader:async () => {
-          const res = await fetch('http://localhost:5000/chefs');
+          const res = await fetch('https://shefa-house-momenurislam6-gmailcom.vercel.app/chefs');
           const data = await res.json();
           return data;
         }

@@ -11,7 +11,7 @@ const ViewRecipes = () => {
     const [singleChefData, setSingleChefData] = useState([])
     useEffect(() => {
         console.log(id)
-        fetch(`http://localhost:5000/chefs/${id}`)
+        fetch(`https://shefa-house-momenurislam6-gmailcom.vercel.app/chefs/${id}`)
         .then(res => res.json())
         .then(data => setSingleChefData(data))
             
