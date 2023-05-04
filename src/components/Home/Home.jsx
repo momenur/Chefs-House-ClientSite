@@ -1,24 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
 import Header from '../Header/Header';
+import Chef from '../Chef/Chef';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const user = useContext(AuthContext)
 
-    const [chefsData, setChefsData] = useState([]);
+    const [chefSData, setChefsData] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/chefs')
-            .then(res => res.json())
-            .then(data => setChefsData(data))
-            .catch(error => console.log(error))
-}, [])
-console.log(chefsData);
-return (
-    <div>
-        <Header></Header>
-    </div>
-);
+    const chefsData = useLoaderData();
+    return (
+        <div>
+            <Header></Header>
+
+            <div className='bg-neutral-500'>
+                <div className='w-5/6 grid-cols-3 gap-4 pb-8 mx-auto md:grid'>
+                    {
+                        chefsData.map(chefData => <Chef key={chefsData.id} chefData={chefData}></Chef>)
+                    }
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Home;

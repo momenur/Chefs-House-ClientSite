@@ -1,6 +1,19 @@
-.Header-img img{
+.Header-img img {
     width: 30vw;
 }
-.header-text{
+
+.header-text {
     line-height: 90px;
+}
+
+@media only screen and (max-width: 576px) {
+    .Header-img img {
+        width: 90vw;
+    }
+
+    .header-text {
+        line-height: 20px;
+        margin-left: 0;
+        padding-left: 0;
+    }
 }

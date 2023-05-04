@@ -21,7 +21,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader:async () => {
+          const res = await fetch('http://localhost:5000/chefs');
+          const data = await res.json();
+          return data;
+        }
       },
       {
         path: '/blog',
