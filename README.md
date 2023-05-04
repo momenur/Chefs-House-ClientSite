@@ -1,5 +1,5 @@
-- in the Job Forest project i can load data form public section .
-- and show data more component like home , applied job , job details etc.
-- added a rechart in this project . and add a common header .
-- added a responsive navbar in this job forest project .
-- use use state, useEffect , loader , use loader data etc.
+----- fist a foll install a react project by vite , and install firebase , deasyUI, TaillwindCSS etc.
+----- for th chefs house project , at fast create some nessary components . and added router.
+----- then fetch data form server site. and make home page .
+----- then added blog component and some nesesary componnts .
+-----  this project use use state, useEffect , loader , use loader, useContext etc.
