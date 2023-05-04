@@ -17,7 +17,7 @@ const ViewRecipes = () => {
             
     }, [])
 
-    console.log(singleChefData);
+
 
     return (
         <div className='bg-neutral-500'>
@@ -30,6 +30,8 @@ const ViewRecipes = () => {
                         <img className='w-full single-chef-img' src={singleChefData.photo} alt="" />
                     </div>
                 </div>
+
+                
             </div>
         </div>
     );
