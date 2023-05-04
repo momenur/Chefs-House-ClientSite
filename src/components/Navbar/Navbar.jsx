@@ -27,8 +27,8 @@ const Navbar = () => {
                             user ? <>
                                 <Link onClick={handelLogOut} className="text-xl normal-case btn btn-ghost text-neutral-content" to='/login'>Log Out</Link>
                             </> : <>
-                                <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/login'>Login</Link>
                                 <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/register'>Register</Link>
+                                <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/login'>Login</Link>
                             </>
                         }
                     </div>
