@@ -4,60 +4,57 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
 
-    const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext)
+    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext)
 
-    // const [loginError, setLoginError] = useState('')
+    const [loginError, setLoginError] = useState('')
 
     const handelLogIn = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value
-        // setLoginError('')
-        // if(email === email && password === password){
-        //     setLoginError('email or password does not match')
-        //     console.log(loginError);
-        //     return;
-        // }
 
         signIn(email, password)
-        .then(result => {
-            const logedUser = result.user;
-            console.log(logedUser
+            .then(result => {
+                const logedUser = result.user;
+                console.log(logedUser
                 );
-            form.reset()
-        })
-        .then(error => {
-            console.log(error);
-        })
+                form.reset()
+            })
+            .then(error => {
+                setLoginError(error.message)
+                console.log(error);
+            })
     }
 
     //  Google Sign in
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result => {
-            const logedUser = result.user;
-            console.log(logedUser)
-        })
-        .then(error => {
-            console.log(error)
-        })
+            .then(result => {
+                const logedUser = result.user;
+                console.log(logedUser)
+            })
+            .then(error => {
+                console.log(error)
+            })
     }
 
     //  Github Sign In
 
     const handleGithubSignIn = () => {
         githubSignIn()
-        .then(result => {
-            const logedUser = result.user;
-            console.log(logedUser);
-        })
-        .then(error => {
-            console.log(error)
-        })
+            .then(result => {
+                const logedUser = result.user;
+                console.log(logedUser);
+            })
+            .then(error => {
+                console.log(error)
+            })
     }
-    
+
+    console.log(loginError);
+
     return (
         <div>
             <div className=" hero bg-neutral-500">
@@ -71,17 +68,17 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
-                                
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+
                             </div>
                             <div className="mt-6 form-control">
-                                {/* <p className='mb-2 text-red-500'>{loginError}</p> */}
+                                <p className='mb-2 text-red-500'>{loginError}</p>
                                 <button className="mb-4 btn btn-primary">Login</button>
                                 <button onClick={handleGoogleSignIn} className="mb-4 btn btn-outline btn-primary">Sign IN With Google</button>
                                 <button onClick={handleGithubSignIn} className="btn btn-outline btn-primary">Sign In With Github</button>

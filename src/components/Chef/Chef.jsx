@@ -1,5 +1,6 @@
 import React from 'react';
 import './chef.css'
+import { Link } from 'react-router-dom';
 
 const Chef = (props) => {
     const chef = props.chefData;
@@ -16,7 +17,7 @@ const Chef = (props) => {
                     <p><span className='font-bold text-red-900'>Experience:  </span>  {chef.experience}</p>
                     <p><span className='font-bold text-red-900'>Recipes:  </span>  {chef.numberOfRecipes}</p>
                     <p><span className='font-bold text-red-900'>Likes:  </span> {chef.likes}</p>
-                    <button className='my-5 btn btn-sm'>View Recipes</button>
+                    <Link to={`/view/${chef.id}`}><button className='my-5 btn btn-sm'>View Recipes</button></Link>
                 </div>
             </div>
         </div>

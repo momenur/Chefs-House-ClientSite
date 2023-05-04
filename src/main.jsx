@@ -13,6 +13,8 @@ import Register from './components/Login/Register.jsx';
 import Login from './components/Login/Login.jsx';
 import AuthProviders from './providers/AuthProviders.jsx';
 import ErrorPage from './components/PageNotFound/ErrorPage.jsx';
+import ViewRecipes from './components/ViewRecipes/ViewRecipes.jsx';
+import PrivateRouts from './routs/PrivateRouts.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/view/:id',
+        element: <PrivateRouts><ViewRecipes></ViewRecipes></PrivateRouts>
       },
       {
         path: '*',
