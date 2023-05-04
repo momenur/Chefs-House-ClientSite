@@ -13,10 +13,10 @@ const Navbar = () => {
             })
     }
     return (
-        <div>
+        <div className=''>
             <div className="navbar bg-neutral">
-                <div>
-                    <a className="text-4xl font-extrabold text-neutral-content ">Chefs House</a>
+                <div className='w-5/6 mx-auto'>
+                    <a className="text-4xl font-extrabold text-red-400 ">Chefs House</a>
                     <div>
                         <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/'>Home</Link>
                         <Link className="text-xl normal-case btn btn-ghost text-neutral-content" to='/blog'>Blog</Link>
