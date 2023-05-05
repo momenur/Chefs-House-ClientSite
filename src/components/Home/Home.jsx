@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 const Home = () => {
     const user = useContext(AuthContext)
 
-    const [chefSData, setChefsData] = useState([]);
+    
 
     const chefsData = useLoaderData();
     return (

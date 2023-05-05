@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Chef = (props) => {
     const chef = props.chefData;
-    console.log(chef);
+    // console.log(chef);
 
     return (
         <div>
