@@ -41,15 +41,12 @@ const ViewRecipes = () => {
     // Tost
    
     
-    const notify = () => toast("Wow so easy!");
+    const notify = () => toast("This Recipe Added to Favorite List");
     const favoriteTost = () => {
         notify()
         setTost(false)
-        x.disabled = true ;
     }
-    const disable = (x) =>{
-        x.disable = true;
-    } 
+    
     
 
     
